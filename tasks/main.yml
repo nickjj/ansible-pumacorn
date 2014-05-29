@@ -1,0 +1,15 @@
+---
+- name: ensure pumacorn init.d config is created
+  template: src=initd_pumacorn.j2 dest=/etc/init.d/{{ rails_deploy_app_name }} mode=0755
+
+- name: ensure pumacorn reloads
+  service: name={{ rails_deploy_app_name }} state=reloaded enabled=yes
+  when: repo_status.changed and not rails_deploy_ran_migration|bool and not pumacorn_force_restart
+
+- name: ensure pumacorn restarts
+  service: name={{ rails_deploy_app_name }} state=restarted enabled=yes
+  when: repo_status.changed and rails_deploy_ran_migration|bool or pumacorn_force_restart
+
+- name: ensure pumacorn starts on a fresh reboot
+  service: name={{ rails_deploy_app_name }} state=started enabled=yes
+
