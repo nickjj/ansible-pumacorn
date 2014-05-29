@@ -83,6 +83,10 @@ It depends on the [nickjj.rails](https://github.com/nickjj/ansible-rails) role. 
 
 Tested on ubuntu 12.04 LTS but it should work on other versions that are similar.
 
+## Ansible galaxy
+
+You can find it on the official [ansible galaxy](https://galaxy.ansible.com/list#/roles/946) if you want to rate it.
+
 ## Example puma config
 
 To do phased restarts with puma you must have at least 2 workers running and you cannot pre-load your application. Below is a bare bones puma config file that you can use. If you happen to use [orats](https://github.com/nickjj/orats) to generate your projects then all of this is taken care of for you.
