@@ -35,7 +35,7 @@ web_server_stop_switch="-{{ pumacorn_stop_signal }}"
 web_server_reload_switch="-{{ pumacorn_reload_signal }}"
 
 # ---------------------------------------------------------------------------
-# source the enviroment, ensure correct user, switch into the app's path
+# source the environment, ensure correct user, switch into the app's path
 # ---------------------------------------------------------------------------
 if ! . /etc/default/"$app_name" ; then
  echo "failed to source environment for $app_name, exiting"; exit 1;
