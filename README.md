@@ -68,8 +68,8 @@ pumacorn_reload_signal: USR2
 #### Does it automatically restart a crashed process?
 
 Nope, init.d scripts don't do that. What you get is a service that starts on bootup, restarts when a migration was ran and reloads with no downtime when no migrations were ran. If you want the process to be monitored you will want to hook up something like [monit](http://mmonit.com/monit), [runit](http://smarden.org/runit) or [god](http://godrb.com/).
-
-I personally prefer monit because the API for adding new things to monitor is very nice and it optionally exposes a web front end.
+ 
+I personally prefer monit because the API for adding new things to monitor is very nice and it optionally exposes a web front end. If you're interested here's a link to my [nickjj.monit role](https://github.com/nickjj/ansible-monit).
 
 ## Installation
 
