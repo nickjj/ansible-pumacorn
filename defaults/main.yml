@@ -1,5 +1,5 @@
 pumacorn_server: puma
-pumacorn_config_path: config/{{ pumacorn_server }}.rb
+pumacorn_config_path: "{{ rails_deploy_path }}/config/{{ pumacorn_server }}.rb"
 pumacorn_stop_signal: QUIT
 pumacorn_reload_signal: USR1 # USR2 for unicorn
 pumacorn_force_restart: false
