@@ -56,7 +56,6 @@ Let's say you want to edit a few defaults, you can do this by opening or creatin
 ```
 ---
 pumacorn_server: unicorn
-pumacorn_reload_signal: USR2
 ```
 
 #### Does it automatically restart a crashed process?
