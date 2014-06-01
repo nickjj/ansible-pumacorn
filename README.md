@@ -116,7 +116,7 @@ end
 
 ## Example unicorn config
 
-I don't use unicorn but I borrowed gitlab's unicorn config from [gitlabhq](https://github.com/gitlabhq/gitlabhq/blob/master/config/unicorn.rb.example).
+I don't use unicorn but I borrowed gitlab's unicorn config from [gitlabhq](https://github.com/gitlabhq/gitlabhq/blob/master/config/unicorn.rb.example). The only exception is your pid file must be written to `{{ rails_deploy_path}}/tmp/unicorn.pid`. If you go to about line 15 in the config file below you will see the `pid` command that you need to adjust.
 
 `config/unicorn.rb`:
 
@@ -135,6 +135,9 @@ I don't use unicorn but I borrowed gitlab's unicorn config from [gitlabhq](https
 # other files that need to be changed for relative url support
 #
 # ENV['RAILS_RELATIVE_URL_ROOT'] = "/gitlab"
+
+# replace this with the same value as {{ rails_deploy_path }}
+pid "/full/path/to/your/project/tmp/unicorn.pid"
 
 # Use at least one worker per core if you're on a dedicated server,
 # more will usually help for _short_ waits on databases/caches.
@@ -158,9 +161,6 @@ listen "127.0.0.1:8080", :tcp_nopush => true
 
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 30
-
-# feel free to point this anywhere accessible on the filesystem
-pid "/home/git/gitlab/tmp/pids/unicorn.pid"
 
 # By default, the Unicorn logger will write to stderr.
 # Additionally, some applications/frameworks log to stderr or stdout,
