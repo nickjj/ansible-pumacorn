@@ -29,13 +29,7 @@ Below is a list of default values along with a description of what they do.
 pumacorn_server: puma
 
 # The path to the config file.
-pumacorn_config_path: config/{{ pumacorn_server }}.rb
-
-# Which signal type is used to stop the service?
-pumacorn_stop_signal: QUIT
-
-# Which signal type is used to do a 0 downtime reload?
-pumacorn_reload_signal: USR1 # USR2 for unicorn
+pumacorn_config_path: "{{ rails_deploy_path }}/config/{{ pumacorn_server }}.rb"
 
 # Should a restart be forced?
 pumacorn_force_restart: false
