@@ -103,7 +103,7 @@ end
 
 prune_bundler
 
-restart_command 'bundle exec puma'
+restart_command 'bundle exec bin/puma'
 
 on_worker_boot do
   require 'active_record'
