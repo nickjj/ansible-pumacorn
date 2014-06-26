@@ -1,4 +1,4 @@
-## What is ansible-pumacorn?
+## What is ansible-pumacorn? [![Build Status](https://secure.travis-ci.org/nickjj/ansible-pumacorn.png)](http://travis-ci.org/nickjj/ansible-pumacorn)
 
 It is an [ansible](http://www.ansible.com/home) role to manage either a puma or unicorn rails process.
 

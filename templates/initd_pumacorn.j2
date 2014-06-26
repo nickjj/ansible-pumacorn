@@ -33,7 +33,7 @@ else
 fi
 
 server_path="$app_root/bin/{{ pumacorn_server }}"
-bundle="{{ rails_deploy_shell_prefix }} bundle"
+bundle="{{ rails_deploy_bundle }}"
 
 pid_path="$app_root/tmp"
 socket_path="$app_root/tmp"
