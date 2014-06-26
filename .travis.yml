@@ -30,4 +30,4 @@ script:
     | grep -q '200'
     && (echo 'HTTP test: pass' && exit 0)
     || (echo 'HTTP test: fail' && exit 1)
-  - "cat /tmp/app.git/log/production.log"
+  - "sudo service app status"
