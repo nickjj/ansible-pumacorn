@@ -29,10 +29,10 @@ if [ "{{ pumacorn_server }}" = "puma" ]; then
 else
   server_config_flag="c"
   server_daemon_flag="D"
-  server_reload_signal="USR2"  
+  server_reload_signal="USR2"
 fi
 
-server_path="$app_root/bin/{{ pumacorn_server }}"
+server_path="{{ pumacorn_server }}"
 bundle="{{ rails_deploy_bundle }}"
 
 pid_path="$app_root/tmp"
